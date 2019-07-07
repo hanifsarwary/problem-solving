@@ -44,13 +44,40 @@ class LinkedList:
                 raise Exception(
                     'The element must be of type '+str(type(self.head.data)))
 
+    def addSorted(self, element):
+        if self.head is not None and type(element) is type(self.head.data):
+            prev = temp = self.head
+
+            while(temp != None and temp.data < element):
+                prev = temp
+                temp = temp.next
+            if temp == None:
+                prev.next = Node(element)
+
+            elif temp == self.head:
+                temp1 = Node(element)
+                temp1.next = temp
+                self.head = temp1
+
+            else:
+                temp1 = Node(element)
+                temp1.next = temp
+                prev.next = temp1
+
+        else:
+            if self.head is None:
+                self.head = Node(element)
+            else:
+                raise Exception(
+                    'The element must be of type '+str(type(self.head.data)))
+
 
 def main():
 
     ls = LinkedList()
-    ls.addAtEnd(5)
-    ls.addAtEnd(2)
-    ls.addAtEnd(4)
+    ls.addSorted(1)
+    ls.addSorted(3)
+    ls.addSorted(-2)
     ls.printlist()
 
 
