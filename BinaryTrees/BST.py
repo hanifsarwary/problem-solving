@@ -57,3 +57,5 @@ class BST:
                 temp = None
 
             return
+
+    def printTree(self):
