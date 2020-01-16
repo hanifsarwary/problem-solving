@@ -24,10 +24,6 @@ Input Format
 A single line of input containing the string .
 Note: The string  will contain only uppercase letters: .
 
-Constraints
-
-
-
 Output Format
 
 Print one line: the name of the winner and their score separated by a space.
